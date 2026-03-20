@@ -3,243 +3,347 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dasa Deva - Java Developer</title>
+    <title>Deva — Backend Engineer</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #ffffff;
-            --secondary-color: #f8f9fa;
-            --text-color: #2c3e50;
-            --highlight-color: #3498db;
-            --border-color: #e9ecef;
-            --heading-color: #2c3e50;
-            --shadow-color: rgba(0, 0, 0, 0.1);
+            --bg: #f8f9fa;
+            --surface: #ffffff;
+            --text: #2c3e50;
+            --muted: #6c757d;
+            --accent: #2563eb;
+            --accent-light: #eff6ff;
+            --border: #e9ecef;
+            --shadow: rgba(0,0,0,0.07);
+            --tag-bg: #f1f5f9;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--secondary-color);
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
+        .container { max-width: 960px; margin: 0 auto; padding: 0 24px; }
 
+        /* Hero */
         header {
-            background-color: var(--primary-color);
-            padding: 2rem 0;
-            margin-bottom: 2rem;
-            box-shadow: 0 2px 4px var(--shadow-color);
+            background: var(--surface);
+            border-bottom: 1px solid var(--border);
+            padding: 3rem 0 2.5rem;
         }
 
-        .profile-header {
-            text-align: center;
+        .hero { text-align: center; }
+        .hero h1 { font-size: 2.4rem; font-weight: 700; margin-bottom: 0.4rem; }
+        .hero .role {
+            font-size: 1.1rem;
+            color: var(--muted);
+            margin-bottom: 1.4rem;
         }
 
-        .profile-header h1 {
-            font-size: 2.5rem;
-            color: var(--heading-color);
-            margin-bottom: 1rem;
-        }
-
-        .profile-header p {
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-            color: var(--text-color);
-        }
-
-        .section {
-            background-color: var(--primary-color);
-            padding: 2rem;
-            border-radius: 10px;
-            margin-bottom: 2rem;
-            box-shadow: 0 2px 4px var(--shadow-color);
-            border: 1px solid var(--border-color);
-        }
-
-        h2 {
-            color: var(--heading-color);
-            margin-bottom: 1rem;
-            border-bottom: 2px solid var(--highlight-color);
-            padding-bottom: 0.5rem;
-        }
-
-        .contact-info {
+        .tags {
             display: flex;
-            justify-content: center;
-            gap: 2rem;
             flex-wrap: wrap;
-            margin-bottom: 2rem;
+            gap: 8px;
+            justify-content: center;
+            margin-bottom: 1.6rem;
+        }
+        .tag {
+            background: var(--tag-bg);
+            color: var(--text);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 4px 14px;
+            font-size: 0.85rem;
+            font-weight: 500;
         }
 
-        .contact-item {
+        .contact-links {
+            display: flex;
+            gap: 1.4rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .contact-links a {
             display: flex;
             align-items: center;
-            gap: 0.5rem;
-        }
-
-        .contact-item i {
-            color: var(--highlight-color);
-        }
-
-        .contact-item a {
-            color: var(--highlight-color);
+            gap: 6px;
+            color: var(--accent);
             text-decoration: none;
-            transition: color 0.3s ease;
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+        .contact-links a:hover { text-decoration: underline; }
+
+        /* Sections */
+        main { padding: 2.5rem 0; }
+
+        .section {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 1px 3px var(--shadow);
         }
 
-        .contact-item a:hover {
-            color: #2980b9;
-            text-decoration: underline;
+        .section h2 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 1.2rem;
+            padding-bottom: 0.6rem;
+            border-bottom: 2px solid var(--accent);
+            display: inline-block;
         }
 
+        /* Skills */
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
         }
+        .skill-group h3 {
+            font-size: 0.82rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--muted);
+            margin-bottom: 0.4rem;
+        }
+        .skill-group p { font-size: 0.95rem; }
 
-        .skill-category {
-            margin-bottom: 1rem;
-            padding: 1rem;
-            background-color: var(--secondary-color);
+        /* Projects */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+        }
+        .project-card {
+            border: 1px solid var(--border);
             border-radius: 8px;
-            transition: transform 0.3s ease;
+            padding: 1.1rem 1.2rem;
+            transition: border-color 0.2s, box-shadow 0.2s;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        .project-card:hover {
+            border-color: var(--accent);
+            box-shadow: 0 2px 8px var(--shadow);
+        }
+        .project-card h3 {
+            font-size: 0.97rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 0.4rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .project-card p {
+            font-size: 0.88rem;
+            color: var(--muted);
+            line-height: 1.5;
+        }
+        .project-badge {
+            display: inline-block;
+            font-size: 0.72rem;
+            padding: 2px 7px;
+            border-radius: 10px;
+            background: var(--accent-light);
+            color: var(--accent);
+            font-weight: 500;
+            margin-left: auto;
+            white-space: nowrap;
+        }
+        .project-badge.learning {
+            background: #f0fdf4;
+            color: #16a34a;
         }
 
-        .skill-category:hover {
-            transform: translateY(-2px);
+        /* Experience */
+        .exp-list { list-style: none; }
+        .exp-list li {
+            padding: 0.5rem 0;
+            padding-left: 1.2rem;
+            position: relative;
+            font-size: 0.97rem;
+        }
+        .exp-list li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
         }
 
-        .skill-category h3 {
-            color: var(--highlight-color);
-            margin-bottom: 0.5rem;
-            font-size: 1.1rem;
-        }
+        /* Education */
+        .edu-item h3 { font-size: 1rem; font-weight: 600; }
+        .edu-item p { color: var(--muted); font-size: 0.93rem; }
 
-        .responsibilities li {
-            margin-bottom: 1rem;
-            list-style-position: inside;
-            padding-left: 1rem;
-        }
-
-        .responsibilities li::marker {
-            color: var(--highlight-color);
-        }
-
-        .education {
-            margin-bottom: 1rem;
-            padding: 1rem;
-            background-color: var(--secondary-color);
-            border-radius: 8px;
-        }
-
-        .education h3 {
-            color: var(--highlight-color);
-            margin-bottom: 0.5rem;
-        }
-
-        @media (max-width: 768px) {
-            .contact-info {
-                flex-direction: column;
-                align-items: center;
-                gap: 1rem;
-            }
-
-            .skills-grid {
-                grid-template-columns: 1fr;
-            }
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 1.9rem; }
+            .skills-grid { grid-template-columns: 1fr 1fr; }
+            .projects-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="profile-header">
-                <h1>Dasa Deva</h1>
-                <p>🌟 Java Developer </p>
-                <p>2 Years of Experience in Building Scalable Solutions</p>
+
+<header>
+    <div class="container">
+        <div class="hero">
+            <h1>Deva</h1>
+            <p class="role">Backend Engineer · 3+ years · Java · Kotlin · Spring Boot · AWS · Kafka</p>
+            <div class="tags">
+                <span class="tag">Java 21</span>
+                <span class="tag">Kotlin</span>
+                <span class="tag">Spring Boot 3</span>
+                <span class="tag">Quarkus</span>
+                <span class="tag">Kafka</span>
+                <span class="tag">AWS</span>
+                <span class="tag">Docker / K8s</span>
+                <span class="tag">PostgreSQL</span>
+            </div>
+            <div class="contact-links">
+                <a href="https://github.com/deva-u7" target="_blank">
+                    <i class="fab fa-github"></i> github.com/deva-u7
+                </a>
+                <a href="https://www.linkedin.com/in/deva-u7" target="_blank">
+                    <i class="fab fa-linkedin"></i> linkedin.com/in/deva-u7
+                </a>
+                <a href="mailto:dasadeva8189@gmail.com">
+                    <i class="fas fa-envelope"></i> dasadeva8189@gmail.com
+                </a>
             </div>
         </div>
-    </header>
+    </div>
+</header>
 
-    <main class="container">
-        <section class="section">
-            <h2>📫 Contact</h2>
-            <div class="contact-info">
-                <div class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <a href="mailto:dasadeva8189@gmail.com">dasadeva8189@gmail.com</a>
-                </div>
-                <div class="contact-item">
-                    <i class="fab fa-linkedin"></i>
-                    <a href="https://www.linkedin.com/in/deva-u7">Dasa Deva</a>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-code"></i>
-                    <a href="https://leetcode.com/deva-u7">LeetCode: Dasa Deva</a>
-                </div>
+<main>
+    <div class="container">
+
+        <div class="section">
+            <h2>About</h2>
+            <p>
+                Backend engineer with 3+ years building distributed systems across Java and Kotlin.
+                I work across the full backend stack — REST APIs, async messaging with Kafka and AWS SQS/SNS,
+                reactive services with WebFlux, cloud deployments, and containerised workloads.
+                I pick the right tool for the job: Spring Boot for rich ecosystems, Quarkus/Ktor for
+                lightweight services. Currently exploring AI engineering — local LLMs, RAG pipelines,
+                and agent patterns.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>Projects</h2>
+            <div class="projects-grid">
+                <a class="project-card" href="https://github.com/deva-u7/spring-cloud-aws" target="_blank">
+                    <h3>
+                        <i class="fab fa-aws"></i>
+                        spring-cloud-aws
+                        <span class="project-badge">Java</span>
+                    </h3>
+                    <p>Multi-module Spring Boot 3 project — SNS, SQS, S3 with LocalStack E2E tests, Secrets Manager, LaunchDarkly feature flags. AWS SDK v2 throughout.</p>
+                </a>
+                <a class="project-card" href="https://github.com/deva-u7/spring-boot-reactive" target="_blank">
+                    <h3>
+                        <i class="fas fa-bolt"></i>
+                        spring-boot-reactive
+                        <span class="project-badge">Java</span>
+                    </h3>
+                    <p>Reactive REST APIs with Spring WebFlux and R2DBC. Non-blocking end-to-end.</p>
+                </a>
+                <a class="project-card" href="https://github.com/deva-u7/quarkus-gcp-pubsub" target="_blank">
+                    <h3>
+                        <i class="fas fa-feather"></i>
+                        quarkus-gcp-pubsub
+                        <span class="project-badge">Kotlin</span>
+                    </h3>
+                    <p>Quarkus + Kotlin service consuming GCP Pub/Sub messages. Native image compatible.</p>
+                </a>
+                <a class="project-card" href="https://github.com/deva-u7/camunda-employee-onboarding" target="_blank">
+                    <h3>
+                        <i class="fas fa-sitemap"></i>
+                        camunda-employee-onboarding
+                        <span class="project-badge learning">Learning</span>
+                    </h3>
+                    <p>Camunda 8 BPMN process — Zeebe job workers, DMN decision tables, embedded forms, Docker Compose setup.</p>
+                </a>
+                <a class="project-card" href="https://github.com/deva-u7/devOps-learning" target="_blank">
+                    <h3>
+                        <i class="fas fa-server"></i>
+                        devOps-learning
+                        <span class="project-badge learning">Learning</span>
+                    </h3>
+                    <p>Docker, Kubernetes, CI/CD patterns and notes from hands-on practice.</p>
+                </a>
             </div>
-        </section>
+        </div>
 
-        <section class="section">
-            <h2>💻 Technical Skills</h2>
+        <div class="section">
+            <h2>Technical Skills</h2>
             <div class="skills-grid">
-                <div class="skill-category">
+                <div class="skill-group">
                     <h3>Languages</h3>
-                    <p>Java, Kotlin</p>
+                    <p>Java 21, Kotlin, SQL</p>
                 </div>
-                <div class="skill-category">
-                    <h3>Frameworks & Tools</h3>
-                    <p>Spring Boot, Hibernate/JPA, Quarkus, WebFlux, Ktor, Koin, REST </p>
+                <div class="skill-group">
+                    <h3>Frameworks</h3>
+                    <p>Spring Boot 3, Spring WebFlux, Quarkus, Ktor, Hibernate/JPA</p>
                 </div>
-                <div class="skill-category">
+                <div class="skill-group">
+                    <h3>Messaging</h3>
+                    <p>Kafka, AWS SNS, AWS SQS</p>
+                </div>
+                <div class="skill-group">
+                    <h3>Cloud / AWS</h3>
+                    <p>S3, SNS, SQS, Secrets Manager, EC2, SDK v2</p>
+                </div>
+                <div class="skill-group">
                     <h3>Databases</h3>
-                    <p>Oracle, MySQL, PostgreSQL, MS SQL, MongoDB</p>
+                    <p>PostgreSQL, MySQL, MongoDB, Oracle, H2</p>
                 </div>
-                <div class="skill-category">
-                    <h3>Cloud & DevOps</h3>
-                    <p>Docker, Kubernetes (K8s), AWS (EC2, S3, SNS, SQS, Secret Manager), OpenAPI</p>
+                <div class="skill-group">
+                    <h3>Testing</h3>
+                    <p>JUnit 5, Testcontainers, LocalStack, Mockito, WireMock</p>
                 </div>
-                <div class="skill-category">
-                    <h3>Version Control & PM Tools</h3>
-                    <p>Git, JIRA, Confluence</p>
+                <div class="skill-group">
+                    <h3>DevOps</h3>
+                    <p>Docker, Kubernetes, Maven, Gradle, GitHub Actions</p>
                 </div>
-                <div class="skill-category">
-                    <h3>Development Tools</h3>
-                    <p>IntelliJ IDEA, Maven, Gradle</p>
+                <div class="skill-group">
+                    <h3>Tools</h3>
+                    <p>IntelliJ IDEA, Git, JIRA, Confluence, OpenAPI</p>
                 </div>
             </div>
-        </section>
+        </div>
 
-        <section class="section">
-            <h2>🎯 Professional Experience</h2>
-            <ul class="responsibilities">
-                <li>Designed and implemented architecture for mobile and web applications (banking domain).</li>
-                <li>Played a key role in delivering MVP Mobile Apps, focusing on backend development.</li>
-                <li>Provided live production support, resolving critical issues efficiently.</li>
-                <li>Collaborated with clients to gather and understand high-level requirements.</li>
-                <li>Worked closely with teams to ensure adherence to the best development methodologies and quality standards.</li>
+        <div class="section">
+            <h2>Experience</h2>
+            <ul class="exp-list">
+                <li>Built and maintained production backend services in Java and Kotlin across multiple projects.</li>
+                <li>Designed asynchronous event-driven systems using Kafka and AWS messaging services.</li>
+                <li>Implemented reactive APIs with Spring WebFlux and non-blocking persistence with R2DBC.</li>
+                <li>Deployed and managed containerised workloads using Docker and Kubernetes.</li>
+                <li>Integrated third-party APIs and cloud services (AWS SDK v2, GCP Pub/Sub, DocuSign).</li>
+                <li>Worked across the full delivery cycle — design, implementation, code review, production support.</li>
             </ul>
-        </section>
+        </div>
 
-        <section class="section">
-            <h2>🌟 Education</h2>
-            <div class="education">
+        <div class="section">
+            <h2>Education</h2>
+            <div class="edu-item">
                 <h3>Bachelor of Computer Applications (BCA)</h3>
                 <p>BKMNU University, 2023</p>
             </div>
-        </section>
-    </main>
+        </div>
+
+    </div>
+</main>
+
 </body>
 </html>
