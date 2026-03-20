@@ -29,7 +29,6 @@
 
         .container { max-width: 960px; margin: 0 auto; padding: 0 24px; }
 
-        /* Hero */
         header {
             background: var(--surface);
             border-bottom: 1px solid var(--border);
@@ -78,7 +77,6 @@
         }
         .contact-links a:hover { text-decoration: underline; }
 
-        /* Sections */
         main { padding: 2.5rem 0; }
 
         .section {
@@ -165,19 +163,57 @@
             color: #16a34a;
         }
 
-        /* Experience */
-        .exp-list { list-style: none; }
+        /* Experience timeline */
+        .exp-entry {
+            padding-bottom: 1.6rem;
+            margin-bottom: 1.6rem;
+            border-bottom: 1px solid var(--border);
+        }
+        .exp-entry:last-child {
+            padding-bottom: 0;
+            margin-bottom: 0;
+            border-bottom: none;
+        }
+        .exp-header {
+            display: flex;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 0.3rem;
+        }
+        .exp-company {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--text);
+        }
+        .exp-role {
+            font-size: 0.93rem;
+            color: var(--accent);
+            font-weight: 600;
+        }
+        .exp-period {
+            font-size: 0.83rem;
+            color: var(--muted);
+            margin-left: auto;
+        }
+        .exp-list { list-style: none; margin-top: 0.5rem; }
         .exp-list li {
-            padding: 0.5rem 0;
+            padding: 0.3rem 0;
             padding-left: 1.2rem;
             position: relative;
-            font-size: 0.97rem;
+            font-size: 0.93rem;
+            color: var(--text);
         }
         .exp-list li::before {
             content: '▸';
             position: absolute;
             left: 0;
             color: var(--accent);
+        }
+        .exp-sub {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px dashed var(--border);
         }
 
         /* Education */
@@ -188,6 +224,7 @@
             .hero h1 { font-size: 1.9rem; }
             .skills-grid { grid-template-columns: 1fr 1fr; }
             .projects-grid { grid-template-columns: 1fr; }
+            .exp-period { margin-left: 0; }
         }
     </style>
 </head>
@@ -236,6 +273,37 @@
                 lightweight services. Currently exploring AI engineering — local LLMs, RAG pipelines,
                 and agent patterns.
             </p>
+        </div>
+
+        <div class="section">
+            <h2>Experience</h2>
+
+            <div class="exp-entry">
+                <div class="exp-header">
+                    <span class="exp-company">SysOut Technologies</span>
+                    <span class="exp-role">Software Engineer</span>
+                    <span class="exp-period">Apr 2023 – Present</span>
+                </div>
+                <ul class="exp-list">
+                    <li>Designed and built backend microservices in Java and Kotlin for fintech and logistics platforms.</li>
+                    <li>Built event-driven systems using Kafka and AWS messaging (SNS, SQS) for asynchronous processing.</li>
+                    <li>Integrated payment gateways and third-party financial APIs.</li>
+                    <li>Deployed containerised services on AWS using EC2, S3, Secrets Manager, Docker, and Kubernetes.</li>
+                    <li>Implemented unit, integration, and E2E testing with high code coverage across services.</li>
+                    <li>Contributed to multi-region deployments, real-time tracking, and compliance-aware configurations.</li>
+                </ul>
+
+                <div class="exp-sub">
+                    <div class="exp-header">
+                        <span class="exp-role">Software Engineer Intern</span>
+                        <span class="exp-period">Jan 2023 – Mar 2023</span>
+                    </div>
+                    <ul class="exp-list">
+                        <li>Developed backend features with Spring Boot and JPA as part of the core engineering team.</li>
+                        <li>Wrote unit tests and participated in code reviews under senior engineer guidance.</li>
+                    </ul>
+                </div>
+            </div>
         </div>
 
         <div class="section">
@@ -320,18 +388,6 @@
                     <p>IntelliJ IDEA, Git, JIRA, Confluence, OpenAPI</p>
                 </div>
             </div>
-        </div>
-
-        <div class="section">
-            <h2>Experience</h2>
-            <ul class="exp-list">
-                <li>Built and maintained production backend services in Java and Kotlin across multiple projects.</li>
-                <li>Designed asynchronous event-driven systems using Kafka and AWS messaging services.</li>
-                <li>Implemented reactive APIs with Spring WebFlux and non-blocking persistence with R2DBC.</li>
-                <li>Deployed and managed containerised workloads using Docker and Kubernetes.</li>
-                <li>Integrated third-party APIs and cloud services (AWS SDK v2, GCP Pub/Sub, DocuSign).</li>
-                <li>Worked across the full delivery cycle — design, implementation, code review, production support.</li>
-            </ul>
         </div>
 
         <div class="section">
