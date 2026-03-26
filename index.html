@@ -37,186 +37,44 @@
 
         .hero { text-align: center; }
         .hero h1 { font-size: 2.4rem; font-weight: 700; margin-bottom: 0.4rem; }
-        .hero .role {
-            font-size: 1.1rem;
-            color: var(--muted);
-            margin-bottom: 1.4rem;
-        }
+        .hero .role { font-size: 1.1rem; color: var(--muted); margin-bottom: 1.4rem; }
 
-        .tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            justify-content: center;
-            margin-bottom: 1.6rem;
-        }
-        .tag {
-            background: var(--tag-bg);
-            color: var(--text);
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            padding: 4px 14px;
-            font-size: 0.85rem;
-            font-weight: 500;
-        }
+        .tags { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-bottom: 1.6rem; }
+        .tag { background: var(--tag-bg); color: var(--text); border: 1px solid var(--border); border-radius: 20px; padding: 4px 14px; font-size: 0.85rem; font-weight: 500; }
 
-        .contact-links {
-            display: flex;
-            gap: 1.4rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        .contact-links a {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            color: var(--accent);
-            text-decoration: none;
-            font-size: 0.95rem;
-            font-weight: 500;
-        }
+        .contact-links { display: flex; gap: 1.4rem; justify-content: center; flex-wrap: wrap; }
+        .contact-links a { display: flex; align-items: center; gap: 6px; color: var(--accent); text-decoration: none; font-size: 0.95rem; font-weight: 500; }
         .contact-links a:hover { text-decoration: underline; }
 
         main { padding: 2.5rem 0; }
 
-        .section {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 2rem;
-            margin-bottom: 1.5rem;
-            box-shadow: 0 1px 3px var(--shadow);
-        }
+        .section { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; margin-bottom: 1.5rem; box-shadow: 0 1px 3px var(--shadow); }
 
-        .section h2 {
-            font-size: 1.15rem;
-            font-weight: 700;
-            color: var(--text);
-            margin-bottom: 1.2rem;
-            padding-bottom: 0.6rem;
-            border-bottom: 2px solid var(--accent);
-            display: inline-block;
-        }
+        .section h2 { font-size: 1.15rem; font-weight: 700; color: var(--text); margin-bottom: 1.2rem; padding-bottom: 0.6rem; border-bottom: 2px solid var(--accent); display: inline-block; }
 
-        /* Skills */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-        }
-        .skill-group h3 {
-            font-size: 0.82rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            color: var(--muted);
-            margin-bottom: 0.4rem;
-        }
+        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
+        .skill-group h3 { font-size: 0.82rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); margin-bottom: 0.4rem; }
         .skill-group p { font-size: 0.95rem; }
 
-        /* Projects */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1rem;
-        }
-        .project-card {
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 1.1rem 1.2rem;
-            transition: border-color 0.2s, box-shadow 0.2s;
-            text-decoration: none;
-            color: inherit;
-            display: block;
-        }
-        .project-card:hover {
-            border-color: var(--accent);
-            box-shadow: 0 2px 8px var(--shadow);
-        }
-        .project-card h3 {
-            font-size: 0.97rem;
-            font-weight: 600;
-            color: var(--accent);
-            margin-bottom: 0.4rem;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-        .project-card p {
-            font-size: 0.88rem;
-            color: var(--muted);
-            line-height: 1.5;
-        }
-        .project-badge {
-            display: inline-block;
-            font-size: 0.72rem;
-            padding: 2px 7px;
-            border-radius: 10px;
-            background: var(--accent-light);
-            color: var(--accent);
-            font-weight: 500;
-            margin-left: auto;
-            white-space: nowrap;
-        }
-        .project-badge.learning {
-            background: #f0fdf4;
-            color: #16a34a;
-        }
+        .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; }
+        .project-card { border: 1px solid var(--border); border-radius: 8px; padding: 1.1rem 1.2rem; transition: border-color 0.2s, box-shadow 0.2s; text-decoration: none; color: inherit; display: block; }
+        .project-card:hover { border-color: var(--accent); box-shadow: 0 2px 8px var(--shadow); }
+        .project-card h3 { font-size: 0.97rem; font-weight: 600; color: var(--accent); margin-bottom: 0.4rem; display: flex; align-items: center; gap: 6px; }
+        .project-card p { font-size: 0.88rem; color: var(--muted); line-height: 1.5; }
+        .project-badge { display: inline-block; font-size: 0.72rem; padding: 2px 7px; border-radius: 10px; background: var(--accent-light); color: var(--accent); font-weight: 500; margin-left: auto; white-space: nowrap; }
+        .project-badge.learning { background: #f0fdf4; color: #16a34a; }
 
-        /* Experience timeline */
-        .exp-entry {
-            padding-bottom: 1.6rem;
-            margin-bottom: 1.6rem;
-            border-bottom: 1px solid var(--border);
-        }
-        .exp-entry:last-child {
-            padding-bottom: 0;
-            margin-bottom: 0;
-            border-bottom: none;
-        }
-        .exp-header {
-            display: flex;
-            align-items: baseline;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-bottom: 0.3rem;
-        }
-        .exp-company {
-            font-size: 1rem;
-            font-weight: 700;
-            color: var(--text);
-        }
-        .exp-role {
-            font-size: 0.93rem;
-            color: var(--accent);
-            font-weight: 600;
-        }
-        .exp-period {
-            font-size: 0.83rem;
-            color: var(--muted);
-            margin-left: auto;
-        }
+        .exp-entry { padding-bottom: 1.6rem; margin-bottom: 1.6rem; border-bottom: 1px solid var(--border); }
+        .exp-entry:last-child { padding-bottom: 0; margin-bottom: 0; border-bottom: none; }
+        .exp-header { display: flex; align-items: baseline; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.3rem; }
+        .exp-company { font-size: 1rem; font-weight: 700; color: var(--text); }
+        .exp-role { font-size: 0.93rem; color: var(--accent); font-weight: 600; }
+        .exp-period { font-size: 0.83rem; color: var(--muted); margin-left: auto; }
         .exp-list { list-style: none; margin-top: 0.5rem; }
-        .exp-list li {
-            padding: 0.3rem 0;
-            padding-left: 1.2rem;
-            position: relative;
-            font-size: 0.93rem;
-            color: var(--text);
-        }
-        .exp-list li::before {
-            content: '▸';
-            position: absolute;
-            left: 0;
-            color: var(--accent);
-        }
-        .exp-sub {
-            margin-top: 1rem;
-            padding-top: 1rem;
-            border-top: 1px dashed var(--border);
-        }
+        .exp-list li { padding: 0.3rem 0; padding-left: 1.2rem; position: relative; font-size: 0.93rem; color: var(--text); }
+        .exp-list li::before { content: '▸'; position: absolute; left: 0; color: var(--accent); }
+        .exp-sub { margin-top: 1rem; padding-top: 1rem; border-top: 1px dashed var(--border); }
 
-        /* Education */
         .edu-item h3 { font-size: 1rem; font-weight: 600; }
         .edu-item p { color: var(--muted); font-size: 0.93rem; }
 
@@ -246,15 +104,9 @@
                 <span class="tag">PostgreSQL</span>
             </div>
             <div class="contact-links">
-                <a href="https://github.com/deva-u7" target="_blank">
-                    <i class="fab fa-github"></i> github.com/deva-u7
-                </a>
-                <a href="https://www.linkedin.com/in/deva-u7" target="_blank">
-                    <i class="fab fa-linkedin"></i> linkedin.com/in/deva-u7
-                </a>
-                <a href="mailto:dasadeva8189@gmail.com">
-                    <i class="fas fa-envelope"></i> dasadeva8189@gmail.com
-                </a>
+                <a href="https://github.com/deva-u7" target="_blank"><i class="fab fa-github"></i> github.com/deva-u7</a>
+                <a href="https://www.linkedin.com/in/deva-u7" target="_blank"><i class="fab fa-linkedin"></i> linkedin.com/in/deva-u7</a>
+                <a href="mailto:dasadeva8189@gmail.com"><i class="fas fa-envelope"></i> dasadeva8189@gmail.com</a>
             </div>
         </div>
     </div>
@@ -265,19 +117,11 @@
 
         <div class="section">
             <h2>About</h2>
-            <p>
-                Backend engineer with 3+ years building distributed systems across Java and Kotlin.
-                I work across the full backend stack — REST APIs, async messaging with Kafka and AWS SQS/SNS,
-                reactive services with WebFlux, cloud deployments, and containerised workloads.
-                I pick the right tool for the job: Spring Boot for rich ecosystems, Quarkus/Ktor for
-                lightweight services. Currently exploring AI engineering — local LLMs, RAG pipelines,
-                and agent patterns.
-            </p>
+            <p>Backend engineer with 3+ years building distributed systems across Java and Kotlin. I work across the full backend stack — REST APIs, async messaging with Kafka and AWS SQS/SNS, reactive services with WebFlux, cloud deployments, and containerised workloads. I pick the right tool for the job: Spring Boot for rich ecosystems, Quarkus/Ktor for lightweight services. Currently exploring AI engineering — local LLMs, RAG pipelines, and agent patterns.</p>
         </div>
 
         <div class="section">
             <h2>Experience</h2>
-
             <div class="exp-entry">
                 <div class="exp-header">
                     <span class="exp-company">SysOut Technologies</span>
@@ -292,7 +136,6 @@
                     <li>Implemented unit, integration, and E2E testing with high code coverage across services.</li>
                     <li>Contributed to multi-region deployments, real-time tracking, and compliance-aware configurations.</li>
                 </ul>
-
                 <div class="exp-sub">
                     <div class="exp-header">
                         <span class="exp-role">Software Engineer Intern</span>
@@ -309,44 +152,28 @@
         <div class="section">
             <h2>Projects</h2>
             <div class="projects-grid">
+                <a class="project-card" href="https://github.com/deva-u7/spring-ollama-chat" target="_blank">
+                    <h3><i class="fas fa-robot"></i> spring-ollama-chat <span class="project-badge learning">Learning · AI</span></h3>
+                    <p>Kotlin + Spring Boot WebFlux API talking to a local Ollama instance. Developer tools — code review with structured scoring, conventional commit message generation, and multi-style text summarization. Reactive SSE streaming, prompt templates externalised to resource files, WireMock tests.</p>
+                </a>
                 <a class="project-card" href="https://github.com/deva-u7/spring-cloud-aws" target="_blank">
-                    <h3>
-                        <i class="fab fa-aws"></i>
-                        spring-cloud-aws
-                        <span class="project-badge">Java</span>
-                    </h3>
+                    <h3><i class="fab fa-aws"></i> spring-cloud-aws <span class="project-badge">Java</span></h3>
                     <p>Multi-module Spring Boot 3 project — SNS, SQS, S3 with LocalStack E2E tests, Secrets Manager, LaunchDarkly feature flags. AWS SDK v2 throughout.</p>
                 </a>
                 <a class="project-card" href="https://github.com/deva-u7/spring-boot-reactive" target="_blank">
-                    <h3>
-                        <i class="fas fa-bolt"></i>
-                        spring-boot-reactive
-                        <span class="project-badge">Java</span>
-                    </h3>
+                    <h3><i class="fas fa-bolt"></i> spring-boot-reactive <span class="project-badge">Java</span></h3>
                     <p>Reactive REST APIs with Spring WebFlux and R2DBC. Non-blocking end-to-end.</p>
                 </a>
                 <a class="project-card" href="https://github.com/deva-u7/quarkus-gcp-pubsub" target="_blank">
-                    <h3>
-                        <i class="fas fa-feather"></i>
-                        quarkus-gcp-pubsub
-                        <span class="project-badge">Kotlin</span>
-                    </h3>
+                    <h3><i class="fas fa-feather"></i> quarkus-gcp-pubsub <span class="project-badge">Kotlin</span></h3>
                     <p>Quarkus + Kotlin service consuming GCP Pub/Sub messages. Native image compatible.</p>
                 </a>
                 <a class="project-card" href="https://github.com/deva-u7/docusign-integration" target="_blank">
-                    <h3>
-                        <i class="fas fa-file-signature"></i>
-                        docusign-integration
-                        <span class="project-badge">Java</span>
-                    </h3>
+                    <h3><i class="fas fa-file-signature"></i> docusign-integration <span class="project-badge">Java</span></h3>
                     <p>Spring Boot integration with DocuSign API — envelope creation, webhook callbacks, and signature workflow automation.</p>
                 </a>
                 <a class="project-card" href="https://github.com/deva-u7/camunda-employee-onboarding" target="_blank">
-                    <h3>
-                        <i class="fas fa-sitemap"></i>
-                        camunda-employee-onboarding
-                        <span class="project-badge learning">Learning</span>
-                    </h3>
+                    <h3><i class="fas fa-sitemap"></i> camunda-employee-onboarding <span class="project-badge learning">Learning</span></h3>
                     <p>Camunda 8 BPMN process — Zeebe job workers, DMN decision tables, embedded forms, Docker Compose setup.</p>
                 </a>
             </div>
@@ -355,38 +182,14 @@
         <div class="section">
             <h2>Technical Skills</h2>
             <div class="skills-grid">
-                <div class="skill-group">
-                    <h3>Languages</h3>
-                    <p>Java 21, Kotlin, SQL</p>
-                </div>
-                <div class="skill-group">
-                    <h3>Frameworks</h3>
-                    <p>Spring Boot 3, Spring WebFlux, Quarkus, Ktor, Hibernate/JPA</p>
-                </div>
-                <div class="skill-group">
-                    <h3>Messaging</h3>
-                    <p>Kafka, AWS SNS, AWS SQS</p>
-                </div>
-                <div class="skill-group">
-                    <h3>Cloud / AWS</h3>
-                    <p>S3, SNS, SQS, Secrets Manager, EC2, SDK v2</p>
-                </div>
-                <div class="skill-group">
-                    <h3>Databases</h3>
-                    <p>PostgreSQL, MySQL, MongoDB, Oracle, H2</p>
-                </div>
-                <div class="skill-group">
-                    <h3>Testing</h3>
-                    <p>JUnit 5, Testcontainers, LocalStack, Mockito, WireMock</p>
-                </div>
-                <div class="skill-group">
-                    <h3>DevOps</h3>
-                    <p>Docker, Kubernetes, Maven, Gradle, GitHub Actions</p>
-                </div>
-                <div class="skill-group">
-                    <h3>Tools</h3>
-                    <p>IntelliJ IDEA, Git, JIRA, Confluence, OpenAPI</p>
-                </div>
+                <div class="skill-group"><h3>Languages</h3><p>Java 21, Kotlin, SQL</p></div>
+                <div class="skill-group"><h3>Frameworks</h3><p>Spring Boot 3, Spring WebFlux, Quarkus, Ktor, Hibernate/JPA</p></div>
+                <div class="skill-group"><h3>Messaging</h3><p>Kafka, AWS SNS, AWS SQS</p></div>
+                <div class="skill-group"><h3>Cloud / AWS</h3><p>S3, SNS, SQS, Secrets Manager, EC2, SDK v2</p></div>
+                <div class="skill-group"><h3>Databases</h3><p>PostgreSQL, MySQL, MongoDB, Oracle, H2</p></div>
+                <div class="skill-group"><h3>Testing</h3><p>JUnit 5, Testcontainers, LocalStack, Mockito, WireMock</p></div>
+                <div class="skill-group"><h3>DevOps</h3><p>Docker, Kubernetes, Maven, Gradle, GitHub Actions</p></div>
+                <div class="skill-group"><h3>Tools</h3><p>IntelliJ IDEA, Git, JIRA, Confluence, OpenAPI</p></div>
             </div>
         </div>
 
